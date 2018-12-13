@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="PCloud Demo"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/upload_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_button"
+        android:layout_margin="25dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="upload"
+        android:text="upload"
+        android:textColor="#fff"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_layout"
+        android:layout_margin="25dp"
+
+        android:background="@color/colorAccent"
+        android:onClick="login"
+        android:text="Login First"
+        android:textColor="#fff"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upload_button">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/loading_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:autoLink="web"
+                android:editable="false"
+                android:gravity="center"
+                android:linksClickable="true"
+                android:text="loading"
+                android:textColor="@android:color/black"
+                android:textSize="12sp" />
+
+            <com.timqi.sectorprogressview.ColorfulRingProgressView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/spv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                app:bgColor="#e1e1e1"
+                app:fgColorEnd="#ff4800"
+                app:fgColorStart="#ffe400"
+                app:percent="0"
+                app:startAngle="0"
+                app:strokeWidth="10dp"
+
+
+                />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/thumnail_image"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/download_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:autoLink="web"
+                android:background="@color/colorPrimaryDark"
+                android:editable="false"
+                android:gravity="center"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:text="Download"
+                android:visibility="gone"
+                android:textAllCaps="true"
+                android:onClick="download"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/firebase_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:autoLink="web"
+                android:background="@color/colorPrimaryDark"
+                android:editable="false"
+                android:gravity="center"
+                android:linksClickable="true"
+                android:padding="10dp"
+                android:text="Base"
+                android:visibility="visible"
+                android:textAllCaps="true"
+                android:onClick="firebase"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
